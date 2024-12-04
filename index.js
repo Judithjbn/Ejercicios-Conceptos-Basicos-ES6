@@ -376,6 +376,70 @@ for (const user of users) {
     }
   }
 }
-console.log(soundCount)\
+console.log(soundCount)
 
 //Ejercicio 12
+// Crea una función llamada findArrayIndex que reciba como parametros un array de textos y un texto y devuelve la posición del array cuando el valor del array sea igual al valor del texto que enviaste como parametro. Haz varios ejemplos y compruebalos.
+const mainCharacters = [
+  "Luke",
+  "Leia",
+  "Han Solo",
+  "Chewbacca",
+  "Rey",
+  "Anakin",
+  "Obi-Wan",
+];
+
+const findArrayIndex = (array, text) => {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === text) {
+      return i;
+    }
+  }
+}
+console.log(findArrayIndex(mainCharacters, "Leia"));
+console.log(findArrayIndex(mainCharacters, "Obi-Wan"));
+console.log(findArrayIndex(mainCharacters, "Anakin"));
+
+// Ejercicio 13
+// Usando la función anterior beneficiate de poder conocer el indice del array para crear una función llamada removeItem que pasandole un array y un texto como parametros (los mismos parametros que en el anterior ejercicio) llame a la función anteriormente creada findArrayIndex y obten el indice para posteriormente usar la función de javascript .splice() para eliminar el elemento del array.Finalmente retorna el array.De nuevo haz varios ejemplos para practicar y comprueba que funcionan correctamente.
+
+const removeItem = (array, text) => {
+  const index = findArrayIndex(array,text);
+  array.splice(index, 1);
+  return array;
+}
+
+console.log(removeItem(mainCharacters, "Leia"));
+console.log(removeItem(mainCharacters, "Obi-Wan"));
+
+// Ejercicio 14
+// Crea una función llamada rollDice() que reciba como parametro el numero de caras que queramos que tenga el dado que deberá simular el codigo dentro de la función. Como hemos dicho, que la función use el parametro para simular una tirada de dado y retornar el resultado. Si no se te ocurre como hacer un numero aleatorio no te preocupes! Busca información sobre la función de javascript Math.random()
+
+const rollDice = (numberOfSides) => {
+  const randomNumber = Math.floor(Math.random() * numberOfSides) + 1;
+  return randomNumber;
+}
+console.log(rollDice(6));
+console.log(rollDice(6));
+console.log(rollDice(10));
+
+// Ejercicio 15
+// Crea una función llamada swap que reciba un array y dos parametros que sean indices del array. La función deberá intercambiar la posición de los valores de los indices que hayamos enviado como parametro. Retorna el array resultante.
+
+const fantasticFour = [
+  "La antorcha humana",
+  "Mr. Fantástico",
+  "La mujer invisible",
+  "La cosa",
+];
+
+const swap = (array, index1, index2) => {
+  const temp = array[index1];
+  array[index1] = array[index2];
+  array[index2] = temp;
+  return array;
+}
+
+console.log(swap(fantasticFour, 0, 2));
+

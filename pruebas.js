@@ -1,27 +1,17 @@
-// Crea una función llamada findArrayIndex que reciba como parametros un array de textos y un texto y devuelve la posición del array cuando el valor del array sea igual al valor del texto que enviaste como parametro. Haz varios ejemplos y compruebalos.
+// Crea una función llamada swap que reciba un array y dos parametros que sean indices del array. La función deberá intercambiar la posición de los valores de los indices que hayamos enviado como parametro. Retorna el array resultante.
 
-Sugerencia de función:
-function findArrayIndex(array, text) { }
-
-Ej array:
-const mainCharacters = [
-  "Luke",
-  "Leia",
-  "Han Solo",
-  "Chewbacca",
-  "Rey",
-  "Anakin",
-  "Obi-Wan",
+const fantasticFour = [
+  "La antorcha humana",
+  "Mr. Fantástico",
+  "La mujer invisible",
+  "La cosa",
 ];
 
-const findArrayIndex = (array, text) => {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === text) {
-      return i;
-    }
-  }
+const swap = (array, index1, index2) => {
+  const temp = array[index1];
+  array[index1] = array[index2];
+  array[index2] = temp;
+  return array;
 }
 
-console.log(findArrayIndex(mainCharacters, "Leia"));
-console.log(findArrayIndex(mainCharacters, "Obi-Wan"));
-console.log(findArrayIndex(mainCharacters, "Anakin"));
+console.log(swap(fantasticFour, 0, 2));
